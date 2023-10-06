@@ -14,9 +14,9 @@ Resources:
   MySecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Security group for the EC2 instance
+      GroupDescription: Security group for the EC2 
       SecurityGroupIngress:
-        - IpProtocol: tcp  
+        - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0 # Open SSH access from anywhere (for demonstration, you should restrict this in a production environment)
