@@ -8,8 +8,8 @@ Resources:
       InstanceType: t2.micro
       SecurityGroups:
         - !Ref MySecurityGroup
-      KeyName: YourKeyPairName
-      ImageId: ami-067d1e60475437da2 # Amazon Linux 2 AMI (replace with your desired AMI ID)
+      KeyName: test
+      ImageId: ami-067d1e60475437da2 # Amazon Linux 2 AMI (replace  your desired AMI ID)
 
   MySecurityGroup:
     Type: AWS::EC2::SecurityGroup
