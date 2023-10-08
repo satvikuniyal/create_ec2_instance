@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create an EC2 instance with a security group
+
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-067d1e60475437da2 # Replace with your desired AMI ID
+      KeyName: Linuxkeypair # Replace with your key pair name
+      SecurityGroups:
+        - !Ref LinuxSG
+
+  LinuxSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: My Security Group
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0 # Update this to a more restrictive IP range for SSH access
+      # Add more Ingress rules as needed for your use case   
